@@ -2,6 +2,8 @@
 
 This document is a description of the practices used in iOS development at [Electric Peel](http://www.electricpeelsoftware.com).
 
+We make heavy use of [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) and the [MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern, so this document expects familiarity with both.
+
 ## Frameworks & Tools
 
 *Add a link to a default podfile to use*
