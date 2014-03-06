@@ -6,7 +6,7 @@ We make heavy use of [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCo
 
 ## Frameworks & Tools
 
-*Add a link to a default podfile to use*
+- [Default Podfile](https://github.com/ElectricPeelSoftware/iOS-Best-Practices/blob/master/Podfile)
 
 ### 3rd Party
 
