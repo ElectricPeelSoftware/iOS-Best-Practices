@@ -26,7 +26,9 @@ Auto layout should be used for all layout, except for in subclasses of `UITableV
 
 ### View Controllers
 
-In general, view controllers should not have any auto layout code—if layout code is necessary, it should be done in subclasses of `UIView`. The view controller’s main view should be created in `-loadView`. The `view` property should be overridden with the class of the view that will be used as the main view.
+In general, view controllers should not have any auto layout code—if layout code is necessary, it should be done in subclasses of `UIView`.
+
+A view controller’s main view should be a subclass of `UIView` which is created in `-loadView`. The `view` property should be overridden with the class of the view that will be used as the main view.
 
 ```objective-c
 @interface EPSPersonViewController ()
@@ -38,6 +40,7 @@ In general, view controllers should not have any auto layout code—if layout co
 - (void)loadView {
   self.view = [[EPSPersonView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 }
+...
 @end
 ```
 
