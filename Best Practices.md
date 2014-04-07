@@ -237,18 +237,14 @@ When the property is set, the cell should update itself to reflect the new view 
 
   // Set up labels, image views, etc.
 
-  RAC(self.nameLabel, text) = [[RACObserve(self, viewModel)
-    map:^RACSignal *(EPSPersonViewModel *viewModel){
-      return RACObserve(viewModel, fullName);
-    }]
-    switchToLatest];
+  RAC(self.nameLabel, text) = RACObserve(self, viewModel.fullName);
   ...
 
   return self;
 }
 ```
 
-(Setting up the bindings is more complicated than in view controllers, because the cell needs to observe its view model property, as well as the properties of the current view model. Use `-map:` to return a `RACObserve` signal, and `-switchToLatest` to ensure that only the current view model’s changes are observed.)
+Note that the `RACObserve` statement observes `(self, viewModel.fullName)` instead of `(self.viewModel, fullName)`. We do that to observe changes to the `viewModel` property, and then changes to the `fullName` property of current view model.
 
 #### Patterns
 
